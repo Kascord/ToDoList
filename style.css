@@ -73,3 +73,13 @@ li {
     transform-origin: bottom right;
     transform: scaleX(1); /* Faire apparaître le trait */
 }
+
+@media only screen and (max-width: 600px) {
+  /* Styles spécifiques aux appareils mobiles ici */
+  body {
+    grid-template-rows: auto 1fr;
+  }
+  #tableau {
+    overflow-y: auto;
+  }
+}
