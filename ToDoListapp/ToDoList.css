@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+input {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+button {
+    padding: 8px;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.delete {
+    cursor: pointer;
+    color: #e74c3c;
+}
+
+.delete:hover {
+    text-decoration: underline;
+}
+
+/* Ajoutez cette nouvelle règle CSS pour l'animation de trait */
+.trait-animation span {
+    position: relative;
+    overflow: hidden;
+}
+
+.trait-animation span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db; /* Couleur du trait */
+    transform: scaleX(0); /* Initialement invisible */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.trait-animation input:checked + span::before {
+    transform-origin: bottom right;
+    transform: scaleX(1); /* Faire apparaître le trait */
+}
